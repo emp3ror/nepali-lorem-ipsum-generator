@@ -1,0 +1,25 @@
+{
+  
+	"name": "dummy text generator",
+  
+	"description": "nepali dummy text generator",
+ 
+	"launch_path": "/index.html",
+ 
+	"icons": {
+    "128": "/img/icon_128.png",
+    
+	"60": "/img/icon_60.png"
+	},
+	"orientation": "portrait",
+
+	 "developer": {
+    
+	"name": "Manish Jung Thapa",
+    
+	"url": "http://mjt.com.np"
+  },
+ 
+	 "default_locale": "en"
+
+}
