@@ -1,5 +1,6 @@
 <html>
 <head>
+  <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
 <title>nepali random word generator like lorem ipsum</title>
 <style type="text/css">
 body{
@@ -71,7 +72,11 @@ button:active {
 <div>
 	<input type="text" name="paragraph" id="paragraph" class="paragraph" placeholder="no. of paragraph">
 	<input type="text" name="sentence" id="sentence" class="sentence" placeholder="sentence/paragraph">
-	<button onclick="display()">create</button>
+	<select id="opt" onchange=display()>
+  <option value="default">JPT</option>
+  <option value="proverbs">real</option>
+</select>
+  <button onclick="display()">create</button>
 	<div id="created">
 
 	</div>
@@ -82,22 +87,38 @@ button:active {
 	<script type="text/javascript">
 
 	function display() {
-		
-		var a,para,sentence;
-		para = document.getElementById("paragraph").value;
-		sentence = document.getElementById("sentence").value;
-		if (para=="") { para=1};
-		if (sentence=="") {sentence=5};
+    var a="",para,sentence;
 
-    for (var i = 0; i < para; i++) {
-      a += makePara(sentence)+"<br>";
+      var x=document.getElementById("opt").selectedIndex; //selection
+      var y=document.getElementById("opt").options;
+      console.log(y[x].value);
+      var valueOfselect =y[x].value;
+
+      var x=document.getElementById("opt").selectedIndex;
+      var y=document.getElementById("opt").options;
+      console.log(y[x].value);
+
+      para = document.getElementById("paragraph").value;
+      sentence = document.getElementById("sentence").value;
+      if (para=="") { para=1};
+      if (sentence=="") {sentence=5};
+
+      if (valueOfselect=='proverbs') {
+        for (var i = 0; i < para; i++) {
+          a += proverbSentence(sentence)+"<br>";
+        }      
+      }
+      else {
+        for (var i = 0; i < para; i++) {
+          a += makePara(sentence)+"<br>";
+        }
+      }
+      console.log(para);
+      console.log(sentence);
+      var x=document.getElementById("created")
+      x.innerHTML=a;
     }
-        
-		console.log(para);
-		console.log(sentence);
-		var x=document.getElementById("created")
-		x.innerHTML=a;
-	}
+
 	</script>
 </body>
 
