@@ -38,8 +38,7 @@ function makePara(a) {
 		};
 	return sentence+"<br>";
 }
-<<<<<<< HEAD
-=======
+
 
 function nepaliProverbsArray() {
 	var nproverbs = ["नहुनु मामा भन्दा कानै मामा जाती ।", 
@@ -185,4 +184,4 @@ function helloWorld() {
 	var a ="helloWorld";
 	console.log(a);
 }
->>>>>>> master
+
